@@ -1,5 +1,5 @@
 function toggleMenu() {
-    alert("Menu Opened! (This is a test result)");
+    alert("Menu opened successfully");
 }
 
 document.getElementById('applicationForm').addEventListener('submit', function(e) {
