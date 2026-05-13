@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join us | Green Roots</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../images/logo.webp">
+    <style>
+        #apply-section { background-color: #f5f0e8; }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-lg sticky-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Green Roots homepage">Green Roots</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto" role="list">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Our team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="apply.html">Apply / Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-hero" role="banner">
+        <div class="container">
+            <h1>Apply or donate</h1>
+            <p>Join the Green Roots mission by volunteering, getting a role, or supporting us with a donation.</p>
+        </div>
+    </div>
+    <main id="main-content">
+        <section id="apply-section" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <form id="applicationForm" class="card p-4 p-md-5 shadow"
+                              novalidate aria-label="Application and donation form">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">
+                                        Full name <span class="required-star" aria-hidden="true">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="name"
+                                           placeholder="e.g. Jane Smith"
+                                           autocomplete="name"
+                                           aria-required="true"
+                                           aria-describedby="nameError">
+                                    <span id="nameError" class="field-error" role="alert"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">
+                                        Email address <span class="required-star" aria-hidden="true">*</span>
+                                    </label>
+                                    <input type="email" class="form-control" id="email"
+                                           placeholder="you@example.com"
+                                           autocomplete="email"
+                                           aria-required="true"
+                                           aria-describedby="emailError emailHelp">
+                                    <span id="emailHelp" class="form-help">We'll only use this to contact you about your submission.</span>
+                                    <span id="emailError" class="field-error" role="alert"></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="interest" class="form-label">
+                                    What do you want to do? <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <select class="form-select" id="interest"
+                                        aria-required="true"
+                                        aria-describedby="interestError">
+                                    <option value="">Please select an option</option>
+                                    <option value="analyst">Junior data analyst</option>
+                                    <option value="outreach">Outreach coordinator</option>
+                                    <option value="field">Field bolunteer</option>
+                                    <option value="content">Content creator</option>
+                                    <option value="other">Other</option>
+                                    <option value="donate">Make a donation</option>
+                                </select>
+                                <span id="interestError" class="field-error" role="alert"></span>
+                            </div>
+                            <div class="form-field-wrap mb-3 hidden" id="otherWrap">
+                                <label for="otherDetail" class="form-label">
+                                    Please specify <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="otherDetail"
+                                       placeholder="Tell us what you'd like to do..."
+                                       aria-describedby="otherDetailError">
+                                <span id="otherDetailError" class="field-error" role="alert"></span>
+                            </div>
+                            <div class="form-field-wrap mb-3" id="qualificationsWrap">
+                                <label for="qualifications" class="form-label">
+                                    Relevant Qualifications / Experience
+                                    <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <textarea class="form-control" id="qualifications" rows="3"
+                                          placeholder="Briefly describe any relevant skills or experience..."
+                                          aria-required="true"
+                                          aria-describedby="qualificationsError qualificationsHelp"></textarea>
+                                <span id="qualificationsHelp" class="form-help">E.g. HTML/CSS skills, previous planting experience, relevant qualifications, etc.</span>
+                                <span id="qualificationsError" class="field-error" role="alert"></span>
+                            </div>
+                            <div class="form-field-wrap mb-3" id="cvWrap">
+                                <label for="cvUpload" class="form-label">Upload your CV</label>
+                                <input type="file" class="form-control" id="cvUpload"
+                                       accept=".pdf,.doc,.docx"
+                                       aria-describedby="cvHelp cvDisplay">
+                                <span id="cvHelp" class="form-help">Accepted: PDF, DOC, DOCX. Max 5 MB.</span>
+                                <span id="cvDisplay" class="d-block" aria-live="polite"></span>
+                            </div>
+                            <div class="form-field-wrap mb-4" id="messageWrap">
+                                <label for="message" class="form-label">
+                                    Why do you want to join?
+                                    <span class="required-star" aria-hidden="true">*</span>
+                                </label>
+                                <textarea class="form-control" id="message" rows="5"
+                                          placeholder="Tell us why you want to join Green Roots and what you hope to contribute..."
+                                          aria-required="true"
+                                          aria-describedby="messageError"></textarea>
+                                <span id="messageError" class="field-error" role="alert"></span>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg w-100" id="submitBtn">
+                                <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
+                                <span id="btnText">Submit application</span>
+                            </button>
+                        </form>
+                        <div id="errorMsg" class="alert mt-4 d-none" role="alert" aria-live="assertive"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="successOverlay" class="success-overlay d-none"
+         role="dialog" aria-modal="true"
+         aria-labelledby="successTitle" aria-describedby="successDesc">
+        <div class="success-card shadow p-5 text-center">
+            <div class="display-1 mb-3" aria-hidden="true">🌳</div>
+            <h2 id="successTitle" class="text-success fw-bold mb-3">Thank you!</h2>
+            <p id="successDesc" class="fs-5 text-dark mb-2">Your application has been received.</p>
+            <p class="fs-5 text-dark mb-4">Your action today will help plant approximately 10 new trees!</p>
+            <button id="closeOverlay" class="btn btn-success btn-lg px-5 rounded-pill">Okay!</button>
+        </div>
+    </div>
+    <footer class="bg-dark text-white py-5 text-center">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Green Roots &mdash; BTEC Level 3 - Unit 15 student project</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/script.js"></script>
+    <script>
+    (function () {
+        'use strict';
+
+        const form            = document.getElementById('applicationForm');
+        const nameInput       = document.getElementById('name');
+        const emailInput      = document.getElementById('email');
+        const interestSelect  = document.getElementById('interest');
+        const otherDetail     = document.getElementById('otherDetail');
+        const qualifInput     = document.getElementById('qualifications');
+        const messageInput    = document.getElementById('message');
+        const cvInput         = document.getElementById('cvUpload');
+
+        const otherWrap       = document.getElementById('otherWrap');
+        const qualifWrap      = document.getElementById('qualificationsWrap');
+        const cvWrap          = document.getElementById('cvWrap');
+        const messageWrap     = document.getElementById('messageWrap');
+
+        const submitBtn       = document.getElementById('submitBtn');
+        const btnText         = document.getElementById('btnText');
+        const btnSpinner      = document.getElementById('btnSpinner');
+        const successOverlay  = document.getElementById('successOverlay');
+        const closeOverlay    = document.getElementById('closeOverlay');
+        const errorMsg        = document.getElementById('errorMsg');
+        const cvDisplay       = document.getElementById('cvDisplay');
+
+        cvInput.addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                const f = this.files[0];
+                cvDisplay.textContent = `Selected: ${f.name} (${(f.size/1024).toFixed(0)} KB)`;
+                cvDisplay.style.color = '#198754';
+                cvDisplay.style.fontWeight = '500';
+                cvDisplay.style.fontSize = '0.82rem';
+            } else {
+                cvDisplay.textContent = '';
+            }
+        });
+
+        interestSelect.addEventListener('change', function () {
+            const v = this.value;
+            const isDonate = v === 'donate';
+            const isOther  = v === 'other';
+
+            isOther ? otherWrap.classList.remove('hidden') : otherWrap.classList.add('hidden');
+            if (!isOther) { otherDetail.value = ''; clearFieldState(otherDetail, 'otherDetailError'); }
+
+            if (isDonate) {
+                qualifWrap.classList.add('hidden');
+                cvWrap.classList.add('hidden');
+                messageWrap.classList.add('hidden');
+                btnText.textContent = 'Proceed to Donation 💚';
+            } else {
+                qualifWrap.classList.remove('hidden');
+                cvWrap.classList.remove('hidden');
+                messageWrap.classList.remove('hidden');
+                btnText.textContent = 'Submit Application';
+            }
+            clearFieldState(interestSelect, 'interestError');
+        });
+
+        function showError(input, errorId, msg) {
+            input.classList.add('is-invalid'); input.classList.remove('is-valid');
+            const el = document.getElementById(errorId);
+            if (el) { el.textContent = msg; el.classList.add('visible'); }
+        }
+        function showSuccess(input, errorId) {
+            input.classList.add('is-valid'); input.classList.remove('is-invalid');
+            const el = document.getElementById(errorId);
+            if (el) { el.textContent = ''; el.classList.remove('visible'); }
+        }
+        function clearFieldState(input, errorId) {
+            input.classList.remove('is-valid','is-invalid');
+            const el = document.getElementById(errorId);
+            if (el) { el.textContent = ''; el.classList.remove('visible'); }
+        }
+        function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+        nameInput.addEventListener('blur', function() {
+            this.value.trim() ? showSuccess(this,'nameError') : showError(this,'nameError','Please enter your full name.');
+        });
+        nameInput.addEventListener('input', function() { if(this.value.trim()) showSuccess(this,'nameError'); });
+
+        emailInput.addEventListener('blur', function() {
+            const v = this.value.trim();
+            if (!v) showError(this,'emailError','Please enter your email address.');
+            else if (!validEmail(v)) showError(this,'emailError','Please enter a valid email address (e.g. name@example.com).');
+            else showSuccess(this,'emailError');
+        });
+        emailInput.addEventListener('input', function() { if(validEmail(this.value.trim())) showSuccess(this,'emailError'); });
+
+        otherDetail.addEventListener('blur', function() {
+            if (interestSelect.value === 'other' && !this.value.trim())
+                showError(this,'otherDetailError','Please tell us what you would like to do.');
+            else if (this.value.trim()) showSuccess(this,'otherDetailError');
+        });
+        otherDetail.addEventListener('input', function() { if(this.value.trim()) showSuccess(this,'otherDetailError'); });
+
+        qualifInput.addEventListener('blur', function() {
+            if (interestSelect.value !== 'donate' && !this.value.trim())
+                showError(this,'qualificationsError','Please describe your qualifications or experience.');
+            else if (this.value.trim()) showSuccess(this,'qualificationsError');
+        });
+        qualifInput.addEventListener('input', function() { if(this.value.trim()) showSuccess(this,'qualificationsError'); });
+
+        messageInput.addEventListener('blur', function() {
+            if (interestSelect.value !== 'donate' && !this.value.trim())
+                showError(this,'messageError','Please tell us why you want to join.');
+            else if (this.value.trim()) showSuccess(this,'messageError');
+        });
+        messageInput.addEventListener('input', function() { if(this.value.trim()) showSuccess(this,'messageError'); });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            errorMsg.classList.add('d-none');
+
+            const isDonate = interestSelect.value === 'donate';
+            const isOther  = interestSelect.value === 'other';
+            let valid = true;
+
+            if (!nameInput.value.trim()) { showError(nameInput,'nameError','Please enter your full name.'); valid = false; }
+            else showSuccess(nameInput,'nameError');
+
+            const emailVal = emailInput.value.trim();
+            if (!emailVal) { showError(emailInput,'emailError','Please enter your email address.'); valid = false; }
+            else if (!validEmail(emailVal)) { showError(emailInput,'emailError','Please enter a valid email address.'); valid = false; }
+            else showSuccess(emailInput,'emailError');
+
+            if (!interestSelect.value) { showError(interestSelect,'interestError','Please select an option.'); valid = false; }
+            else showSuccess(interestSelect,'interestError');
+
+            if (isOther && !otherDetail.value.trim()) { showError(otherDetail,'otherDetailError','Please tell us what you would like to do.'); valid = false; }
+            else if (isOther) showSuccess(otherDetail,'otherDetailError');
+
+            if (!isDonate) {
+                if (!qualifInput.value.trim()) { showError(qualifInput,'qualificationsError','Please describe your qualifications or experience.'); valid = false; }
+                else showSuccess(qualifInput,'qualificationsError');
+                if (!messageInput.value.trim()) { showError(messageInput,'messageError','Please tell us why you want to join.'); valid = false; }
+                else showSuccess(messageInput,'messageError');
+            }
+
+            if (!valid) {
+                errorMsg.textContent = 'Please fix the errors above before submitting.';
+                errorMsg.classList.remove('d-none');
+                form.querySelector('.is-invalid')?.scrollIntoView({ behavior:'smooth', block:'center' });
+                return;
+            }
+
+            if (isDonate) {
+                submitBtn.disabled = true;
+                btnSpinner.classList.add('active');
+                btnText.textContent = 'Redirecting…';
+                setTimeout(() => {
+                    window.open('https://ko-fi.com/starlover0104','_blank','noopener,noreferrer');
+                    submitBtn.disabled = false;
+                    btnSpinner.classList.remove('active');
+                    btnText.textContent = 'Proceed to Donation 💚';
+                }, 800);
+                return;
+            }
+
+            submitBtn.disabled = true;
+            btnSpinner.classList.add('active');
+            btnText.textContent = 'Submitting…';
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                btnSpinner.classList.remove('active');
+                btnText.textContent = 'Submit Application';
+                successOverlay.classList.remove('d-none');
+                closeOverlay.focus();
+            }, 1400);
+        });
+
+        closeOverlay.addEventListener('click', function() {
+            successOverlay.classList.add('d-none');
+            form.reset();
+            [nameInput,emailInput,interestSelect,qualifInput,messageInput,cvInput,otherDetail].forEach(el => {
+                el.classList.remove('is-valid','is-invalid');
+            });
+            ['nameError','emailError','interestError','otherDetailError','qualificationsError','messageError'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) { el.textContent = ''; el.classList.remove('visible'); }
+            });
+            cvDisplay.textContent = '';
+            otherWrap.classList.add('hidden');
+            qualifWrap.classList.remove('hidden');
+            cvWrap.classList.remove('hidden');
+            messageWrap.classList.remove('hidden');
+            btnText.textContent = 'Submit Application';
+        });
+        successOverlay.addEventListener('keydown', e => { if(e.key==='Escape') closeOverlay.click(); });
+
+    })();
+    </script>
+</body>
+</html>
