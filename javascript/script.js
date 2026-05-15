@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const currentImpactData = { treesPlantedThisMonth: 40, volunteers: 4 };
+    const impactData = {
+        treesPlantedThisMonth: 40,
+        foundingMembers: 4,
+        learningResources: 6,
+        openRoles: 4
+    };
 
     function animateCounter(el, target, duration) {
         let start = 0;
@@ -22,18 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000 / 60);
     }
 
-    const counterEl = document.getElementById('treeCount');
-    if (counterEl) {
+    const counterTargets = [
+        { id: 'treeCount',        value: impactData.treesPlantedThisMonth },
+        { id: 'memberCount',      value: impactData.foundingMembers },
+        { id: 'resourceCount',    value: impactData.learningResources },
+        { id: 'roleCount',        value: impactData.openRoles }
+    ];
+
+    counterTargets.forEach(({ id, value }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter(counterEl, currentImpactData.treesPlantedThisMonth, 1200);
+                    animateCounter(el, value, 1200);
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
-        observer.observe(counterEl);
-    }
+        observer.observe(el);
+    });
 
     const cvInput = document.getElementById('cvUpload');
     const cvDisplay = document.getElementById('cvFileName');
@@ -69,20 +82,20 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMsg.classList.add('d-none');
             errorMsg.innerHTML = '';
 
-            const name          = document.getElementById('name').value.trim();
-            const email         = document.getElementById('email').value.trim();
-            const interest      = document.getElementById('interest').value;
-            const isDonate      = interest === 'donate';
-            const message       = isDonate ? 'ok' : document.getElementById('message').value.trim();
+            const name           = document.getElementById('name').value.trim();
+            const email          = document.getElementById('email').value.trim();
+            const interest       = document.getElementById('interest').value;
+            const isDonate       = interest === 'donate';
+            const message        = isDonate ? 'ok' : document.getElementById('message').value.trim();
             const qualifications = isDonate ? 'ok' : document.getElementById('qualifications').value.trim();
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const errors = [];
 
-            if (!name)                      errors.push('Please enter your <strong>Full Name</strong>.');
-            if (!emailRegex.test(email))    errors.push('Please enter a valid <strong>Email Address</strong>.');
-            if (!interest)                  errors.push('Please select an <strong>Area of Interest</strong>.');
-            if (!isDonate && !message)      errors.push('Please provide a <strong>Cover Message</strong>.');
+            if (!name)                        errors.push('Please enter your <strong>Full Name</strong>.');
+            if (!emailRegex.test(email))      errors.push('Please enter a valid <strong>Email Address</strong>.');
+            if (!interest)                    errors.push('Please select an <strong>Area of Interest</strong>.');
+            if (!isDonate && !message)        errors.push('Please provide a <strong>Cover Message</strong>.');
             if (!isDonate && !qualifications) errors.push('Please enter your <strong>Qualifications</strong>.');
 
             if (errors.length) {
